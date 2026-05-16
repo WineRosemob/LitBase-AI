@@ -4,26 +4,47 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![CI](https://github.com/<your-username>/LitBase-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/LitBase-AI/actions/workflows/ci.yml)
 
-LitBase-AI is a bilingual research workflow toolkit for multi-source literature retrieval, scoring, compliant PDF access, and structured export.
+**LitBase-AI** is a comprehensive, AI-assisted literature research agent that automates the entire academic paper discovery pipeline — from intelligent query expansion and multi-source search, through multi-dimensional relevance scoring, to compliant PDF acquisition and structured export. Designed for researchers, students, and knowledge workers who need to conduct systematic literature reviews efficiently and responsibly.
 
-LitBase-AI 是一个面向研究工作流的双语文献工具，用于多源检索、评分、合规下载与结构化导出。
+**LitBase-AI** 是一个 AI 辅助的文献研究智能体（agent），自动化完成学术论文发现的完整流水线——从智能查询扩展、多源检索，到多维度相关性评分，再到合规 PDF 获取与结构化导出。专为需要高效、系统性地进行文献综述的研究者、学生和知识工作者设计。
 
-## Features | 功能概览
+---
 
-- Multi-source literature search: OpenAlex, Crossref, arXiv, Semantic Scholar, optional CNKI.
-- 多源文献检索：OpenAlex、Crossref、arXiv、Semantic Scholar，以及可选 CNKI。
-- Query expansion for broad recall and better topic coverage.
-- 查询扩展，提升召回范围与主题覆盖。
-- Rule-based scoring, evidence extraction, and optional embedding score.
-- 规则评分、证据提取，以及可选 embedding score。
-- LLM rubric scoring for higher-quality paper selection.
-- 使用 LLM rubric 对候选文献做更细粒度评分。
-- Literature cards plus BibTeX / Excel / JSONL / Markdown outputs.
-- 生成文献卡片，并导出 BibTeX / Excel / JSONL / Markdown。
-- Open-access PDF download and user-authorized institutional access flows.
-- 支持开放获取 PDF 下载与用户已授权机构访问流程。
-- `doctor` command for environment and source diagnostics.
-- 提供 `doctor` 诊断命令，用于检查环境与数据源状态。
+### 🎯 Why LitBase-AI? | 为什么选择 LitBase-AI？
+
+| Pain Point | LitBase-AI Solution |
+|---|---|
+| 手动在多个学术搜索引擎间切换 / Manually switching between search engines | 一键聚合 OpenAlex、Semantic Scholar、Crossref、arXiv、CNKI / One-click aggregation across 5+ sources |
+| 检索词单一导致遗漏关键文献 / Missing papers due to narrow keywords | LLM 驱动的查询扩展，自动生成多角度检索词 / LLM-powered query expansion |
+| 人工筛选上百篇文献费时费力 / Manually screening hundreds of papers | 规则评分 + Embedding + LLM Rubric 三级自动筛选 / Three-tier automated scoring pipeline |
+| 找到文献后不知如何合法获取 PDF / Unsure how to legally obtain PDFs | 优先开放获取 + 机构代理 + arXiv 合法下载，Sci-Hub 默认关闭 / OA-first strategy with compliance by default |
+| 结果整理散乱难以复用 / Scattered results hard to reuse | 统一导出 BibTeX / Excel / JSONL / Markdown 文献卡片 / Unified multi-format export |
+
+---
+
+### 🧠 How It Works | 工作原理
+
+```
+你的研究主题 → 查询扩展 → 多源并行检索 → 去重合并 → 规则初筛
+    → LLM 精细评分 → Top-N 精选 → 合规 PDF 下载 → 结构化导出
+```
+
+Each stage is modular and configurable — you can adjust scoring weights, toggle search sources, and customize the LLM rubric to match your domain.
+
+每一阶段都是模块化、可配置的——你可以调整评分权重、开关检索源、自定义 LLM 评分标准以适配你的研究领域。
+
+## ✨ Features | 功能概览
+
+| Feature | Description |
+|---|---|
+| 🔍 **Multi-source Search** 多源检索 | Aggregates OpenAlex, Crossref, arXiv, Semantic Scholar, and optional CNKI in parallel. 并行聚合 5+ 学术数据源。 |
+| 🧠 **LLM Query Expansion** 智能查询扩展 | Generates diverse search terms, including translated variants, for broader recall. 自动生成多角度、多语言检索词。 |
+| 📊 **Three-tier Scoring** 三级评分 | Rule-based pre-filter → evidence extraction → LLM rubric fine-scoring. 规则初筛 → 证据提取 → LLM 精细评分。 |
+| 🎯 **Embedding Score** 语义匹配（可选） | Optional dense-retrieval style relevance ranking via sentence-transformers. 可选语义向量相关性排序。 |
+| 📄 **Compliant PDF Download** 合规 PDF 获取 | OA-first: arXiv, Unpaywall, institutional proxy. Sci-Hub/LibGen disabled by default. 开放获取优先，默认关闭灰色渠道。 |
+| 🔐 **Institutional Access** 机构访问 | WebVPN auto-login and EZProxy support for authorized users. 支持 WebVPN 自动登录与机构代理。 |
+| 📦 **Multi-format Export** 多格式导出 | BibTeX, Excel, JSONL, Markdown literature cards. 一键导出结构化文献卡片。 |
+| 🩺 **Doctor Diagnostics** 环境诊断 | Checks API keys, network, browser binaries, and source availability. 自动检测运行环境与数据源状态。 |
 
 ## Workflow | 工作流程
 
