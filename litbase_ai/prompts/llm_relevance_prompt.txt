@@ -1,0 +1,32 @@
+你是一个严谨的科研文献筛选助手。请根据用户研究主题，判断这篇文献是否适合作为该主题的核心文献、背景文献、方法文献或不相关文献。
+
+请综合考虑：
+1. 论文标题是否与主题直接相关。
+2. 摘要是否涉及研究主题的核心概念。
+3. 研究对象是否匹配。
+4. 研究方法是否有价值。
+5. 这篇论文是否适合用于文献综述、方法比较、数据来源、讨论或研究不足分析。
+
+用户研究主题：
+{topic}
+
+论文信息：
+标题：{title}
+年份：{year}
+期刊/来源：{journal}
+引用数：{citation_count}
+关键词：{keywords}
+摘要：{abstract}
+
+请只输出 JSON，不要输出额外解释。JSON 格式如下：
+
+{
+  "llm_score": 0-100,
+  "paper_type": "core|background|method|data|review|irrelevant",
+  "research_object": "...",
+  "method": "...",
+  "usable_for": ["literature_review", "method", "data", "discussion"],
+  "reason": "...",
+  "labels": ["..."]
+}
+

@@ -1,0 +1,88 @@
+你是一个严谨的科研文献筛选与论文写作辅助专家。请根据用户研究主题，对给定论文进行多维评分。评分必须服务于“是否适合作为该主题论文写作的核心参考文献”。
+
+用户研究主题：
+{topic}
+
+扩展关键词：
+{expanded_keywords}
+
+论文信息：
+标题：{title}
+年份：{year}
+期刊/来源：{journal}
+引用数：{citation_count}
+关键词：{keywords}
+摘要：{abstract}
+
+请从以下维度评分，每项 0-100：
+
+1. topic_relevance
+论文与研究主题的直接相关性。
+
+2. object_relevance
+研究对象是否匹配，例如国家、区域、行业、模型对象。
+
+3. method_relevance
+方法是否与用户研究有关，例如 integrated assessment model, energy system model, scenario analysis, machine learning, GIS 等。
+
+4. data_relevance
+数据来源、变量、指标是否对用户研究有参考价值。
+
+5. novelty
+是否具有前沿性、新颖性或补充价值。
+
+6. citation_value
+是否值得在论文中引用，包括经典性、权威性、被引情况和期刊质量。
+
+7. writing_value
+是否能用于论文写作中的引言、文献综述、方法比较、讨论或研究不足。
+
+8. policy_relevance
+如果主题涉及政策、碳中和、能源转型、区域规划等，判断政策相关性。
+
+9. confidence
+你对评分的置信度。
+
+请给出 final_llm_score，范围 0-100。
+
+请给出 decision，只能从以下选项选择：
+- core
+- important
+- background
+- method
+- data
+- peripheral
+- irrelevant
+
+请给出 usable_for，可多选：
+- introduction
+- literature_review
+- method_comparison
+- data_source
+- model_design
+- result_discussion
+- policy_discussion
+- research_gap
+- not_useful
+
+请给出 evidence，最多 3 条。每条 evidence 必须来自标题、摘要或关键词，不要编造。
+
+请只输出 JSON，不要输出额外解释。JSON 格式如下：
+
+{
+  "topic_relevance": 0,
+  "object_relevance": 0,
+  "method_relevance": 0,
+  "data_relevance": 0,
+  "novelty": 0,
+  "citation_value": 0,
+  "writing_value": 0,
+  "policy_relevance": 0,
+  "confidence": 0,
+  "final_llm_score": 0,
+  "decision": "core|important|background|method|data|peripheral|irrelevant",
+  "usable_for": ["literature_review"],
+  "labels": ["..."],
+  "evidence": ["..."],
+  "reason": "..."
+}

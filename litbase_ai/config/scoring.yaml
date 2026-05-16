@@ -1,0 +1,69 @@
+weights:
+  relevance: 0.40
+  year: 0.15
+  citation: 0.15
+  journal: 0.15
+  access: 0.10
+  type: 0.05
+
+year_score:
+  recent_3_years: 100
+  recent_5_years: 85
+  recent_10_years: 65
+  older: 35
+
+citation_score:
+  use_citation_per_year: true
+
+access_score:
+  has_pdf: 100
+  has_oa_landing_page: 70
+  has_doi_only: 40
+  no_access: 0
+
+journal_score:
+  Q1: 100
+  Q2: 80
+  Q3: 55
+  Q4: 35
+  unknown: 50
+
+type_score:
+  journal_article: 100
+  proceedings_article: 80
+  preprint: 75
+  book_chapter: 60
+  unknown: 50
+
+final_score_weights:
+  rule_score: 0.40
+  llm_rubric_score: 0.45
+  embedding_score: 0.10
+  human_feedback_score: 0.05
+
+llm_rubric:
+  max_papers: 100
+  min_rule_score: 40
+  min_confidence: 50
+
+embedding:
+  enabled: false
+  model_name: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+
+decision_thresholds:
+  core: 85
+  important: 75
+  background: 60
+  peripheral: 40
+
+fallback:
+  llm_candidate_mode: hybrid
+  llm_candidate_top_k: 50
+  min_llm_candidates: 20
+  selection_mode: hybrid
+  selection_top_k: 30
+  min_selected: 10
+  cards_from: auto
+  top_k_cards: 30
+  card_threshold: 0
+  download_top_k_if_none: 5

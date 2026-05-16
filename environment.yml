@@ -1,0 +1,25 @@
+name: litbase-ai
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - beautifulsoup4>=4.12.0
+      - bibtexparser>=1.4.0
+      - feedparser>=6.0.11
+      - httpx>=0.27.0
+      - lxml>=5.2.0
+      - openpyxl>=3.1.0
+      - pandas>=2.0.0
+      - playwright>=1.45.0
+      - pycryptodome>=3.20.0
+      - pydantic>=2.6.0
+      - PyYAML>=6.0
+      - pytest>=8.0.0
+      - python-dotenv>=1.0.0
+      - rapidfuzz>=3.9.0
+      - requests>=2.31.0
+      - rich>=13.7.0
+      - tenacity>=8.2.0
+      - tqdm>=4.66.0

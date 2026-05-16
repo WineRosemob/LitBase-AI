@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litbase-ai"
+version = "0.1.0"
+description = "Literature retrieval, scoring, compliant download, and export toolkit for research workflows."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "AGPL-3.0"}
+authors = [
+  {name = "Wine Rose/IAP"},
+]
+keywords = [
+  "literature-review",
+  "literature-search",
+  "research",
+  "academic",
+  "pdf-download",
+  "openalex",
+  "semantic-scholar",
+  "crossref",
+  "arxiv",
+  "cnki",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: GNU Affero General Public License v3 (AGPL-3.0)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+
+[project.urls]
+Homepage = "https://github.com/<your-username>/LitBase-AI"
+Repository = "https://github.com/<your-username>/LitBase-AI"
+Issues = "https://github.com/<your-username>/LitBase-AI/issues"
+
+dependencies = [
+  "beautifulsoup4>=4.12.0",
+  "bibtexparser>=1.4.0",
+  "feedparser>=6.0.11",
+  "httpx>=0.27.0",
+  "lxml>=5.2.0",
+  "openpyxl>=3.1.0",
+  "pandas>=2.0.0",
+  "playwright>=1.45.0",
+  "pycryptodome>=3.20.0",
+  "pydantic>=2.6.0",
+  "PyYAML>=6.0",
+  "pytest>=8.0.0",
+  "python-dotenv>=1.0.0",
+  "rapidfuzz>=3.9.0",
+  "requests>=2.31.0",
+  "rich>=13.7.0",
+  "tenacity>=8.2.0",
+  "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+embeddings = [
+  "sentence-transformers>=3.0.0",
+]
+
+[project.scripts]
+litbase-ai = "litbase_ai.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["litbase_ai*"]
+
+[tool.setuptools.package-data]
+litbase_ai = ["config/*.yaml", "data/*.csv", "data/*.json", "prompts/*.txt"]

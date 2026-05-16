@@ -1,0 +1,49 @@
+# Environment and secrets
+.env
+.env.*
+*.env
+!.env.example
+!.env.deepseek.example
+!examples/example.env
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.build/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.cache/
+
+# Runtime outputs and logs
+outputs/
+logs/
+*.log
+*.tmp
+*.bak
+
+# Downloaded assets and session data
+pdf/
+*.pdf
+*.cookie
+*.cookies
+storage_state.json
+playwright/.local-browsers/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
